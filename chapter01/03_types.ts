@@ -53,6 +53,18 @@ if(typeof e === 'string'){
 s = e as string;
 s = <string>e;
 
+// void用来表示空，以函数为例，就表示没有返回值得函数
+function fn():void{
+    // return 123; // 会报错，因为上面设置的是void，返回的是空值，所以不能返回数字类型了
+}
+
+// never 表示永远不会返回结果
+function fn2():never{
+    throw new Error('报错了！');
+}
+
+
+
 
 
 
