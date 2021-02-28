@@ -4,9 +4,20 @@
         “include” 用来指定哪些ts文件需要被编译
              路径: ** 表示任意目录
                    * 表示任意文件
+        "exclude" 不需要被编译的文件目录  
+             默认值: ["node_modules","bower_components","jspm_packages"] 
+        "extends"  扩展 继承 相当于引入其他的json文件
+
+
      */ 
      "include":[
         //  一个*表示的是任意文件，两个*表示的是任意目录
          "./src/**/*"
-     ]
+     ],
+     "exclude":[
+         "./src/hello/**/*"
+     ],
+    //  当前配置文件会自动包含config目录下的base.json中的所有配置信息
+     "extends":"./config/base"
+
 }
