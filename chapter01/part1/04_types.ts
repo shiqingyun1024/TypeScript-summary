@@ -42,4 +42,43 @@ e = ['a','b','c'];
 // number[] 表示数值数组
 let f:number[];
 let g:Array<number>;
-g = [1,2,3]
+g = [1,2,3];
+
+/*
+ * 元组，元组就是固定长度的数组
+ *      语法:[类型,类型,类型]
+ * */ 
+let h:[string,number];
+h = ['hello',123]
+
+/*
+* 枚举 enum
+**/ 
+enum Gender{
+    Male,
+    Female
+}
+
+let i:{name:string,gender:Gender};
+i = {
+    name: '孙悟空',
+    gender: Gender.Male
+}
+
+// console.log(i.gender === Gender.Male)
+
+// $表示同时
+let j: {name:string}&{age:number};
+// 表示j既要有name:string，也要有age:number
+j = {name:'孙悟空',age:18}
+
+// 类型的别名
+type myString = string;
+// string的别名是myString，那给变量k定义string类型的时候，可以这样写。
+let k:myString
+// 常见的用法
+type myType = 1|2|3|4|5;
+let l:myType  // 相当于 let l:1|2|3|4|5;
+let m:myType
+l = 5;
+m = 2;
