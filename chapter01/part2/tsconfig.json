@@ -41,7 +41,23 @@
         // 将代码合并为一个文件
         // 设置outFile后，所有的全局作用域中的代码会合并到同一个文件中,用的不多。
         // "outFile":"./dist/app.js"  // 仅支持 amd 和 system
+
+        // 是否对js文件进行编译,默认是false
+        "allowJs":true,
+
+        // 是否检查js代码是否符合语法规范，默认为false
+        "checkJs":false,
+
+        // 是否移除注释,编译之后就没有注释了
+        "removeComments":true,
         
+        // 不生成编译后的文件
+        "noEmit":false,
+
+        // 当有错误时不生成编译后的文件
+        "noEmitOnError":true
+
+
 
 
     }
