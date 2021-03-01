@@ -36,7 +36,11 @@
         // "lib":[]
 
         // outDir 用来指定编译后文件所在的目录
-        "outDir":"./dist"
+        "outDir":"./dist",
+
+        // 将代码合并为一个文件
+        // 设置outFile后，所有的全局作用域中的代码会合并到同一个文件中,用的不多。
+        // "outFile":"./dist/app.js"  // 仅支持 amd 和 system
 
 
     }
