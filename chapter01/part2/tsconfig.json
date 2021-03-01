@@ -18,6 +18,16 @@
          "./src/hello/**/*"
      ],
     //  当前配置文件会自动包含config目录下的base.json中的所有配置信息
-     "extends":"./config/base"
+    //  "extends":"./config/base",
+
+    /*
+      compilerOptions 编译器的选项（tsconfig.json中最重要的配置，里面有很多子选项）
+    */ 
+    "compilerOptions":{
+        // target 用来指定ts被编译为的ES的版本 
+        // 能填的值有很多 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020'
+        "target":"es6"
+    }
+
 
 }
