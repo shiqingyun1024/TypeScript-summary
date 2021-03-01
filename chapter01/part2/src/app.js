@@ -1,2 +1,2 @@
-var a = '123';
-var b = 4;
+let a = '123';
+let b = 4;
