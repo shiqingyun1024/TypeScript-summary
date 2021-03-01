@@ -27,9 +27,18 @@
         // target 用来指定ts被编译为的ES的版本 
         // 能填的值有很多 'ES3', 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020'
         "target":"es6",
+
         // module 指定要使用的模块化的规范
         // 'none', 'commonjs', 'amd', 'system', 'umd', 'es6', 'es2015', 'es2020', 'esnext'
-        "module":"es6"
+        "module":"es6",
+
+        // lib用来指定项目中要使用的库，一般不去设置它,它可填写的值有很多
+        // "lib":[]
+
+        // outDir 用来指定编译后文件所在的目录
+        "outDir":"./dist"
+
+
     }
 
 
