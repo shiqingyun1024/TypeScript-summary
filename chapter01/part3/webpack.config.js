@@ -2,7 +2,7 @@
 const {resolve} = require("path")
 module.exports = {
     // 入口文件
-    entry: './src/js/index.js',
+    entry: './src/index.ts',
     // 出口文件
     output:{
         filename:'js/main.js',
@@ -11,6 +11,14 @@ module.exports = {
     // loader的配置
     module:{
         rules:[
+            {
+                // test指定的是规则生效的文件
+                test:/\.ts$/,
+                // 要使用的loader
+                loader:'ts-loader',
+                // 要排除的文件
+                exclude: /node-modules/
+            }
 
         ]
     },
