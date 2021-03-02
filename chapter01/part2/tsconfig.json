@@ -57,14 +57,20 @@
         // 当有错误时不生成编译后的文件
         "noEmitOnError":true,
 
+        // 所有严格检查的总开关 这个一旦设置为true或者false，相当于所有的严格检查都已经打开或者关闭，下面的那几个属性，例如alwaysStrict都跟strict的保持一致
+        "strict":true,
+
         // 用来设置编译后的文件是否使用严格模式，默认false
         "alwaysStrict": false,
 
         // 不允许隐式的any类型
         "noImplicitAny": true,
 
-        // 不允许不明确类型的this
-        "noImplicitThis": false
+        // 不允许不明确类型的this,默认值是false
+        "noImplicitThis": false,
+
+        // 严格的检查空值
+        "strictNullChecks":true
 
 
 
