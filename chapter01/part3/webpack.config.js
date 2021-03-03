@@ -8,7 +8,11 @@ module.exports = {
     // 出口文件
     output: {
         filename: 'js/main.js',
-        path: resolve(__dirname, 'build')
+        path: resolve(__dirname, 'build'),
+        // 告诉webpack 不使用箭头函数
+        environment:{
+            arrowFunction:false
+        }
     },
     // loader的配置
     module: {
@@ -21,7 +25,7 @@ module.exports = {
                     /*
               js的兼容性处理-- babel-loader @babel/core @babel/preset-env,然后下面是三种解决兼容性的方案，分别下载不同的包
               1、基本的js兼容性处理 ---> @babel/preset-env
-                 问题：只能转换基本语法，如prmise等高级语法不能转换
+                 问题：只能转换基本语法，如promise等高级语法不能转换
               2、全部js兼容性处理 --> @babel/polyfill，直接引入即可，不需要配置 ====因为体积太大了，所以实际开发时用的很少。
                  问题：我只要解决部分兼容性问题，但是将所有兼容性代码全部引入，体积太大了~
               3、需要做兼容性的就做：按需加载。 --> core-js
