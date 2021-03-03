@@ -1,5 +1,6 @@
 // 因为webpack是基于node，所以遵循commonjs规范
-const {resolve} = require("path")
+const {resolve} = require("path");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
     // 入口文件
     entry: './src/index.ts',
@@ -24,6 +25,9 @@ module.exports = {
     },
     // plugins 插件的配置
     plugins:[
+        new HtmlWebpackPlugin({
+            template: "./src/index.html"
+        })
 
     ],
     // 模式
