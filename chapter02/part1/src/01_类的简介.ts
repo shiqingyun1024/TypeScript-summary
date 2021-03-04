@@ -30,10 +30,25 @@ class Person{
     // 同时也可以组合使用 static必须在前面
     static readonly sex:string = 'male';
 
+    // 定义方法
+    sayHello(){
+        console.log('hello ts');
+        console.log('123');
+    }
+
+    // 定义静态方法也就是类方法
+    static sayHello2(){
+        console.log('hello 静态方法');
+        console.log('123');
+    }
+
 }
 
 const per = new Person();
 console.log(per.name);
 console.log(Person.age);
 // per.home = "ss" 只读，不能修改
+
+per.sayHello();
+Person.sayHello2();
 
