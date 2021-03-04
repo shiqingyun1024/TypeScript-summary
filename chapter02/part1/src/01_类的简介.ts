@@ -6,6 +6,15 @@
  * 
  * */ 
 class Person{
+    /**
+     * 直接定义的属性是实例属性，需要通过对象的实例去访问
+     *     const per = new Person()
+     *     per.name
+     * 
+     * 使用static开头的属性是静态属性（类属性），可以直接通过类去访问
+     *     Person.age
+     * 
+     * */ 
 
     // 定义实例属性
     name:string = "孙悟空";
