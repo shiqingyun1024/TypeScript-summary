@@ -67,17 +67,26 @@ i = {
 
 // console.log(i.gender === Gender.Male)
 
-// $表示同时
+// &表示同时
 let j: {name:string}&{age:number};
 // 表示j既要有name:string，也要有age:number
 j = {name:'孙悟空',age:18}
 
-// 类型的别名
+// 类型的别名 使用type来进行定义
 type myString = string;
 // string的别名是myString，那给变量k定义string类型的时候，可以这样写。
 let k:myString
+
+// 用type也可以定义一个对象
+type animal = {
+    name:string,
+    age:number
+}
+let dog:animal
+
 // 常见的用法
 type myType = 1|2|3|4|5;
+
 let l:myType  // 相当于 let l:1|2|3|4|5;
 let m:myType
 l = 5;
