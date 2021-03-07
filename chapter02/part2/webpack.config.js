@@ -2,6 +2,8 @@
 const {resolve} = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+// 从js中抽取css，抽到css文件中
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 module.exports = {
     // 入口文件
     entry:'./src/index.ts',
@@ -14,6 +16,7 @@ module.exports = {
     // loader的配置 配置ts-loader babel-loader等
     module:{
         rules:[
+            // 处理ts的配置
             {
                 // test指定的是规则生效的文件
                 test: /\.ts$/,
@@ -49,6 +52,21 @@ module.exports = {
                     'ts-loader'
                 ],
                 exclude:/node-modules/
+            },
+            // 处理scss 和 css的配置
+            {
+                test:/\.less$/,
+                use:[
+                    // 'style-loader',
+                    // MiniCssExtractPlugin.loader用于把css从js中抽离出来，抽取到css文件里面，所以就用不到style-loader了。
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
+                    'less-loader'
+                ]
+            },
+            // 处理css的兼容性
+            {
+                loader:'postcss-loader'
             }
 
         ]
@@ -61,6 +79,11 @@ module.exports = {
         }),
         new CleanWebpackPlugin({
             cleanAfterEveryBuildPatterns:['build']
+        }),
+        // 提取js文件的css
+        new MiniCssExtractPlugin({
+            // 对输出的文件进行重新命名
+            filename:'css/built.css'
         })
     ],
 
