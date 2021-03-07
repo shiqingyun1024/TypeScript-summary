@@ -60,4 +60,19 @@
     per.setAge(-33);
     // 相当于调用的 get name方法
     console.log(per.name);
+    // protected 的使用例子
+    class A {
+        constructor(num) {
+            this.num = num;
+        }
+    }
+    class B extends A {
+        test() {
+            console.log(this.num);
+        }
+    }
+    const b = new B(123);
+    console.log(b.test());
+    // console.log(b.num)  protected 定义的属性在类外面是不能访问的
+    // b.num = 33;  protected 定义的属性在类外面是不能赋值的
 })();

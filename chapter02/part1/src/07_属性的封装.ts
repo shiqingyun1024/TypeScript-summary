@@ -4,8 +4,9 @@
         // TS可以在属性前添加属性的修饰符
         /**
          * public 修饰的属性可以在任意位置访问（修改）同时也是默认值
-         * private 私有属性，私有属性只能在类内部进行访问（修改）
+         * private 私有属性，私有属性只能在类内部(当前类里面访问，子类不能访问)进行访问（修改）
          *        -通过在类中添加方法使得私有属性可以被外部访问
+         * protected 受保护的属性，只能在当前类和当前类的子类中(也就是类里面)访问（修改）
          * 
          * */ 
         private _name: string;
@@ -82,5 +83,24 @@
 
     // 相当于调用的 get name方法
     console.log(per.name);
+
+    // protected 的使用例子
+    class A{
+        protected num:number;
+        constructor(num:number){
+            this.num = num;
+        }
+    }
+
+    class B extends A{
+        test(){
+            console.log(this.num);
+        }
+    }
+
+    const b = new B(123);
+    console.log(b.test())
+    // console.log(b.num)  protected 定义的属性在类外面是不能访问的
+    // b.num = 33;  protected 定义的属性在类外面是不能赋值的
     
 })()
