@@ -102,5 +102,25 @@
     console.log(b.test())
     // console.log(b.num)  protected 定义的属性在类外面是不能访问的
     // b.num = 33;  protected 定义的属性在类外面是不能赋值的
+
+    // class C{
+    //     name:string;
+    //     age:number;
+    //     constructor(name:string,age:number){
+    //         this.name = name;
+    //         this.age = age;
+    //     }
+    // }
+
+    // 上面定义的class C 的写法等价于下面的这种方法 (语法糖)
+
+    class C{
+        constructor(public name:string,public age:number){
+        }
+    }
+
+    const c = new C('c',22);
+    console.log(c.name);
+    console.log(c.age);
     
 })()
