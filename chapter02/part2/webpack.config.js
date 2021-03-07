@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 module.exports = {
     // 入口文件
-    entry:'./src/index.js',
+    entry:'./src/index.ts',
     // 出口文件
     output:{
         filename:'js/index.js',
