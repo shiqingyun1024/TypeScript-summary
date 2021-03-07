@@ -33,8 +33,26 @@ interface Inter{
     length:number
 }
 
+// T extends Inter  表示泛型T必须是Inter实现类（子类）
 function fn3<T extends Inter>(a:T):number{
     return a.length;
 }
 
 fn3('123')
+
+class MyClass<T>{
+    name:T;
+    constructor(name:T){
+        this.name = name
+
+    }
+}
+
+// 上面的这种方式也可以写成下面这种
+class MyClass2<T>{
+    constructor(public name:T){
+    }
+}
+
+const mc = new MyClass('孙悟空');
+const mc1 = new MyClass2('孙悟空');

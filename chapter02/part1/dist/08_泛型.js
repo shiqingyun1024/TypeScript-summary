@@ -22,7 +22,21 @@ function fn2(a, b) {
 fn2(123, 'hello');
 // 也可以这样写
 fn2(123, 'hello');
+// T extends Inter  表示泛型T必须是Inter实现类（子类）
 function fn3(a) {
     return a.length;
 }
 fn3('123');
+class MyClass {
+    constructor(name) {
+        this.name = name;
+    }
+}
+// 上面的这种方式也可以写成下面这种
+class MyClass2 {
+    constructor(name) {
+        this.name = name;
+    }
+}
+const mc = new MyClass('孙悟空');
+const mc1 = new MyClass2('孙悟空');
