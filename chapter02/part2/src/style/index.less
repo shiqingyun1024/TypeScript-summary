@@ -8,6 +8,10 @@
     box-sizing: border-box;
 }
 
+body{
+    font:bold 20px "Courier"
+}
+
 // 设置主窗口的样式
 #main{
     width: 360px;
@@ -15,6 +19,20 @@
     background-color: @bg-color;
     margin: 100px auto;
     border: 10px solid black;
-    border-radius: 10px;
+    border-radius: 20px;
 
+    // 开启弹性盒模型
+    display: flex;
+    // 设置主轴的方向
+    flex-flow: column;
+    // 设置侧轴的对齐方式
+    align-items: center;
+    // 设置主轴的对齐方式
+    justify-content: space-between;
+
+    #stage{
+        width: 304px;
+        height: 304px;
+        border: 2px solid black;
+    }
 }
