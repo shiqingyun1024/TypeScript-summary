@@ -28,11 +28,31 @@ body{
     // 设置侧轴的对齐方式
     align-items: center;
     // 设置主轴的对齐方式
-    justify-content: space-between;
+    justify-content: space-around;
 
+    // 游戏舞台
     #stage{
         width: 304px;
         height: 304px;
         border: 2px solid black;
+        position: relative;
+
+        // 设置蛇的样式
+        #snake{
+            &>div{
+                width: 10px;
+                height: 10px;
+                background-color: black;
+                border: 1px solid @bg-color;
+                // 开启绝对定位
+                position: absolute;
+            }
+        }
+    }
+    // 计分牌
+    #score-panel{
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
     }
 }
