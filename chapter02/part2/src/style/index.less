@@ -37,16 +37,27 @@ body{
         border: 2px solid black;
         position: relative;
 
+        .common{
+            width: 10px;
+            height: 10px;
+            background-color: black;
+            border: 1px solid @bg-color;
+            // 开启绝对定位
+            position: absolute;
+        }
+
         // 设置蛇的样式
         #snake{
             &>div{
-                width: 10px;
-                height: 10px;
-                background-color: black;
-                border: 1px solid @bg-color;
-                // 开启绝对定位
-                position: absolute;
+                &:extend(.common);
+                // @extend .common;
             }
+        }
+        // 设置食物的样式
+        #food{
+            &:extend(.common);
+            top: 40px;
+            left: 100px;
         }
     }
     // 计分牌
