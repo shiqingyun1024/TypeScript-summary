@@ -9,7 +9,7 @@ module.exports = {
     output: {
         filename: 'js/main.js',
         path: resolve(__dirname, 'build'),
-        // 告诉webpack 不使用箭头函数
+        // 告诉webpack 不使用箭头函数，主要是用于兼容IE浏览器
         environment:{
             arrowFunction:false
         }
