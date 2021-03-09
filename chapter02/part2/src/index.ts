@@ -41,4 +41,31 @@ console.log(food.X,food.Y);
 food.change();
 console.log(food.X,food.Y);
 
+// 定义表示积分牌的类
+class ScorePanel{
+    // score和level用来记录分数和等级
+    score = 0;
+    level = 1;
+
+    // 分数和等级所在的元素，在构造函数中进行初始化
+    scoreEle:HTMLElement;
+    levelEle:HTMLElement;
+
+    constructor(){
+        this.scoreEle = document.getElementById('score')!;
+        this.levelEle = document.getElementById('level')!;
+    }
+
+    // 设置一个加分的方法
+    addScore(){
+        // 使分数自增
+        // this.score++;
+        this.scoreEle.innerHTML = ++this.score + '';
+    }
+
+}
+
+const scorePanel = new ScorePanel();
+scorePanel.addScore();
+
 
