@@ -9,7 +9,9 @@ class GameControl{
     // 定义三个属性
     // 蛇
     snake:Snake;
+    // 食物
     food:Food;
+    // 记分牌
     scorePanel:ScorePanel;
 
     constructor(){
