@@ -88,7 +88,9 @@ class GameControl {
             this.snake.X = X;
             this.snake.Y = Y;
         } catch (e) {
-            alert(e.message)
+            alert(e.message + "GAME OVER!");
+            // 将isLive设置为false，游戏结束
+            this.isLive = false;
         }
 
 
