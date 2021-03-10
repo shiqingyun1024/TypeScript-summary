@@ -83,12 +83,17 @@ class GameControl {
                 break;
         }
 
-        // 给蛇重新定位赋值
-        this.snake.X = X;
-        this.snake.Y = Y;
+        try {
+            // 给蛇重新定位赋值
+            this.snake.X = X;
+            this.snake.Y = Y;
+        } catch (e) {
+            alert(e.message)
+        }
+
 
         // 开启一个定时器
-        this.isLive && setTimeout(this.run.bind(this),300 - (this.scorePanel.level - 1)*30)
+        this.isLive && setTimeout(this.run.bind(this), 300 - (this.scorePanel.level - 1) * 30)
     }
 }
 
