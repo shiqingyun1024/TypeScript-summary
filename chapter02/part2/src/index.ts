@@ -6,7 +6,7 @@ import GameControl from "./modules/GameControl"
 let gameControl = new GameControl();
 console.log(gameControl)
 
-setInterval(()=>{
-    console.log(gameControl.direction);
-},1000)
+// setInterval(()=>{
+//     console.log(gameControl.direction);
+// },1000)
 
