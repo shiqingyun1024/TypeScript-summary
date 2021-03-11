@@ -32,6 +32,11 @@ class Snake{
             // 进入判断说明蛇撞墙了，抛出一个异常
             throw new Error("蛇撞墙了！")
         }
+        // 修改X时，是在修改水平坐标，蛇在左右移动，蛇在向左移动时，不能向右掉头，反之亦然
+        if(this.bodies[1]&&(this.bodies[1] as HTMLElement).offsetLeft === value){
+            
+        }
+
         // 移动身体
         this.moveBody();
         this.head.style.left = value + 'px';
