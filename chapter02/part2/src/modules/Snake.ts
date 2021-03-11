@@ -49,6 +49,8 @@ class Snake{
         // 移动身体
         this.moveBody();
         this.head.style.left = value + 'px';
+        // 检查有没有撞到自己
+        this.checkHeadBody();
     }
 
     set Y(value){
@@ -77,6 +79,7 @@ class Snake{
         this.moveBody();
         this.head.style.top = value + 'px';
         // 检查有没有撞到自己
+        this.checkHeadBody();
     }
 
     // 蛇增加身体的方法
