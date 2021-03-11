@@ -76,6 +76,7 @@ class Snake{
         // 移动身体
         this.moveBody();
         this.head.style.top = value + 'px';
+        // 检查有没有撞到自己
     }
 
     // 蛇增加身体的方法
@@ -102,6 +103,18 @@ class Snake{
             // 将值设置到当前身体上
             (this.bodies[i] as HTMLElement).style.left = X + 'px';
             (this.bodies[i] as HTMLElement).style.top = Y + 'px';
+        }
+    }
+
+    // 检查头部和身体是否相撞
+    checkHeadBody(){
+        // 获取所有的身体，检查其是否和蛇头的坐标发生重叠
+        for(let i = 1;i<this.bodies.length;i++){
+            let bd = this.bodies[i] as HTMLElement;
+            if(this.X === bd.offsetLeft && this.Y === bd.offsetTop){
+                // 进入判断说明蛇头撞到了身体，游戏结束
+                throw new Error('撞到自己了~~');
+            }
         }
     }
 }
