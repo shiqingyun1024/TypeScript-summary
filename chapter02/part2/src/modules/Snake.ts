@@ -34,6 +34,15 @@ class Snake{
         }
         // 修改X时，是在修改水平坐标，蛇在左右移动，蛇在向左移动时，不能向右掉头，反之亦然
         if(this.bodies[1]&&(this.bodies[1] as HTMLElement).offsetLeft === value){
+            console.log('水平方向发生了掉头');
+            // 如果发行了掉头，让蛇向反方向继续移动
+            if(value > this.X){
+                // 如果新值value大于旧值X，此时发生掉头，则说明蛇要向右走，但是应该使蛇保持原来的方向继续向左走
+                value = this.X - 10;
+            }else{
+                // 向左走
+                value = this.X + 10;
+            }
             
         }
 
@@ -51,6 +60,18 @@ class Snake{
         if(value < 0 || value > 290){
             // 进入判断说明蛇撞墙了，抛出一个异常
             throw new Error("蛇撞墙了！")
+        }
+        // 修改Y时，是在修改垂直坐标，蛇在上下移动，蛇在向下移动时，不能向上掉头，反之亦然
+        if(this.bodies[1]&&(this.bodies[1] as HTMLElement).offsetTop === value){
+            console.log('垂直方向发生了掉头');
+            // 如果发行了掉头，让蛇向反方向继续移动
+            if(value > this.Y){
+                // 如果新值value大于旧值Y，此时发生掉头，则说明蛇要向下走，但是应该使蛇保持原来的方向继续向上走
+                value = this.Y - 10;
+            }else{
+                // 向下走
+                value = this.Y + 10;
+            }
         }
         // 移动身体
         this.moveBody();
