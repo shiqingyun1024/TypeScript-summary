@@ -25,7 +25,7 @@ import TodoEvent from './js/TodoEvent';
         }
     ];
 
-    const todoEvent:TodoEvent = new TodoEvent(todoData);
+    const todoEvent:TodoEvent = new TodoEvent(todoData,oTodoList);
 
     const init = (): void => {
         bindEvent();
@@ -49,7 +49,16 @@ import TodoEvent from './js/TodoEvent';
         // 需要先断言一下，然后才可以使用tar.tagName；
         const tar = e.target as HTMLElement;
         const tagName = tar.tagName;
-        
+        if(tagName === 'input' || tagName === 'button'){
+            switch (tagName){
+                case 'input':
+                    break;
+                case 'button':
+                    break;
+                default:
+                    break;        
+            }
+        }
     }
 
     init();

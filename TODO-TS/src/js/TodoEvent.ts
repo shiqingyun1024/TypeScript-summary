@@ -1,9 +1,11 @@
+import TodoDom from "./TodoDom";
 import { ITodoData } from "./typings";
 
-class TodoEvent {
+class TodoEvent extends TodoDom{
     private todoData: ITodoData[];
-    constructor(todoData: ITodoData[]) {
-        this.todoData = todoData
+    constructor(todoData: ITodoData[], todoWrapper: HTMLElement) {
+        super(todoWrapper);
+        this.todoData = todoData;
     }
 
     public addTodo(todo:ITodoData): undefined | number {
