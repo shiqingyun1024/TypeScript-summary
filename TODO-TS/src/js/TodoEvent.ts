@@ -7,7 +7,7 @@ class TodoEvent {
     }
 
     public addTodo(todo:ITodoData): undefined | number {
-        const _todo:null | ITodoData = this.todoData.find((item:ITodoData)=> item.content);
+        const _todo:null | ITodoData = this.todoData.find((item:ITodoData)=> item.content===todo.content);
         if(!_todo){
             this.todoData.push(todo);
             return;
