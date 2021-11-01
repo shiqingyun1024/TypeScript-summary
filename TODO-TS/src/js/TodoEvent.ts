@@ -12,19 +12,21 @@ class TodoEvent extends TodoDom{
         const _todo:null | ITodoData = this.todoData.find((item:ITodoData)=> item.content===todo.content);
         if(!_todo){
             this.todoData.push(todo);
+            this.addItem(todo);
             return;
         }
         return 1001;
 
     }
-    public removeTodo(id:number):void {
+    public removeTodo(target: HTMLElement,id:number):void {
         this.todoData = this.todoData.filter((todo:ITodoData)=>todo.id !== id)
-
+        this.removeItem(target);
     }
-    public toggleComplete(id:number):void {
+    public toggleComplete(target: HTMLElement,id:number):void {
         this.todoData = this.todoData.map((todo:ITodoData)=>{
             if(todo.id === id){
                 todo.completed = !todo.completed;
+                this.changeCompleted(target,todo.completed)
             }
             return todo;
         })
