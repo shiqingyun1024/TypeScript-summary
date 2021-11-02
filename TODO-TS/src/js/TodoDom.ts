@@ -1,6 +1,6 @@
 import TodoTemplate from "./TodoTemplate";
 import { ITodoData } from "./typings";
-import { findParentNode } from "./utils";
+import { createItem, findParentNode } from "./utils";
 
 class TodoDom extends TodoTemplate{
     private todoWrapper:HTMLElement;
@@ -13,18 +13,15 @@ class TodoDom extends TodoTemplate{
         if(todoData.length){
             const oFrag: DocumentFragment = document.createDocumentFragment();
             todoData.map((todo:ITodoData)=>{
-                const oItem: HTMLElement = document.createElement('div');
-                oItem.className = 'todo-item';
-                oItem.innerHTML = this.todoView(todo);
+                const oItem: HTMLElement = createItem('div','todo-item', this.todoView(todo));
                 oFrag.appendChild(oItem);
             })
+            this.todoWrapper.appendChild(oFrag);
         }
     }
 
     protected addItem (todo:ITodoData){
-       const oItem:HTMLElement = document.createElement('div');
-       oItem.className = 'todo-item';
-       oItem.innerHTML = this.todoView(todo);
+       const oItem: HTMLElement = createItem('div','todo-item', this.todoView(todo));
        this.todoWrapper.appendChild(oItem);
     }
 
