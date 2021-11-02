@@ -48,18 +48,22 @@ import TodoEvent from './js/TodoEvent';
                 alert('列表项已存在');
                 return;
             }
+            oInput.value = '';
         }
     }
 
     function handleListClick (e:MouseEvent):void{
         // 需要先断言一下，然后才可以使用tar.tagName；
         const tar = e.target as HTMLElement;
-        const tagName = tar.tagName;
+        const tagName = tar.tagName.toLowerCase();
         if(tagName === 'input' || tagName === 'button'){
+            const id = parseInt(tar.dataset.id);
             switch (tagName){
                 case 'input':
+                    todoEvent.toggleComplete(tar,id)
                     break;
                 case 'button':
+                    todoEvent.removeTodo(tar, id);
                     break;
                 default:
                     break;        

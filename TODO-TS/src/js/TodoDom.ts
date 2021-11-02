@@ -9,6 +9,18 @@ class TodoDom extends TodoTemplate{
         this.todoWrapper = todoWrapper
     }
 
+    protected initList (todoData: ITodoData[]){
+        if(todoData.length){
+            const oFrag: DocumentFragment = document.createDocumentFragment();
+            todoData.map((todo:ITodoData)=>{
+                const oItem: HTMLElement = document.createElement('div');
+                oItem.className = 'todo-item';
+                oItem.innerHTML = this.todoView(todo);
+                oFrag.appendChild(oItem);
+            })
+        }
+    }
+
     protected addItem (todo:ITodoData){
        const oItem:HTMLElement = document.createElement('div');
        oItem.className = 'todo-item';
