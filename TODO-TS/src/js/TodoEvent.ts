@@ -6,6 +6,7 @@ class TodoEvent extends TodoDom{
     constructor(todoData: ITodoData[], todoWrapper: HTMLElement) {
         super(todoWrapper);
         this.todoData = todoData;
+        this.init();
     }
 
     public addTodo(todo:ITodoData): undefined | number {
@@ -17,6 +18,9 @@ class TodoEvent extends TodoDom{
         }
         return 1001;
 
+    }
+    private init(){
+        this.initList(this.todoData);
     }
     public removeTodo(target: HTMLElement,id:number):void {
         this.todoData = this.todoData.filter((todo:ITodoData)=>todo.id !== id)
