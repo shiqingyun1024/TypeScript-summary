@@ -1,4 +1,6 @@
 import express, { Application} from 'express';
+import { readFileSync } from 'fs';
+import { resolve } from 'path';
 import bodyParser from 'body-parser';
 
 const app: Application = express();
@@ -13,7 +15,10 @@ app.all('*',(req,res,next)=>{
 })
 
 app.get('./todolist',function(req,res){
-
+    console.log('进入接口')
+  const todoList: string = readFileSync(resolve(__dirname,'todo.json'),'utf8');
+  console.log(todoList);
+  res.send(todoList);
 })
 
 app.post('./toggle',function(req,res){
