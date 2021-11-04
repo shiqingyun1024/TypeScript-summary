@@ -3,6 +3,7 @@ import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import bodyParser from 'body-parser';
 import { readFile } from './utils';
+import { ITodoData } from '../src/js/typings';
 
 const app: Application = express();
 
@@ -27,6 +28,12 @@ app.post('/toggle',function(req,res){
 })
 
 app.post('/remove',function(req,res){
+    const id:number = parseInt(req.body.id);
+
+    let todoList: ITodoData[]= JSON.parse(readFile('todo.json') || '[]');
+
+    todoList = todoList.filter((todo:ITodoData)=>todo.id !== id)
+
     
 })
 
