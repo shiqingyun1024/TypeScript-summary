@@ -26,7 +26,8 @@ class TodoEvent extends TodoDom{
         this.todoData = todoData;
         this.initList(this.todoData);
     }
-    
+
+    @removeTodo
     public removeTodo(target: HTMLElement,id:number):void {
         this.todoData = this.todoData.filter((todo:ITodoData)=>todo.id !== id)
         this.removeItem(target);
