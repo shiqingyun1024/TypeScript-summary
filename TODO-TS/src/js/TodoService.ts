@@ -7,7 +7,10 @@ export function getTodoList(
     descriptor: PropertyDecorator
 ){
 //   console.log(target,methodName,descriptor);
+// 保存原有的init函数
   const _origin = descriptor.value;
+
+// 重写init函数
   descriptor.value = function(todoData:ITodoData[]){
       $.get('http://localhost:8080/todolist').then((res:string)=>{
           if(!res){
