@@ -27,8 +27,8 @@ app.post('/toggle',function(req,res){
 
 app.post('/remove',function(req,res){
     const id:number = parseInt(req.body.id);
-    fileOperation('todo.json',function(){
-
+    fileOperation('todo.json',function(todoList: ITodoData[]){
+        return todoList.filter((todo:ITodoData)=>todo.id !== id);
     })
     res.send({
         msg:'ok',
