@@ -18,4 +18,7 @@ export function fileOperation(path:string,fn?:any): string | void{
     if(!fn){
         return JSON.stringify(todoList);
     }
+
+    todoList = fn(todoList);
+    writeFile<ITodoData[]>(path,todoList);
 }

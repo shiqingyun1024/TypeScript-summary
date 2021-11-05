@@ -2,7 +2,7 @@ import express, { Application} from 'express';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import bodyParser from 'body-parser';
-import { readFile, writeFile } from './utils';
+import { fileOperation, readFile, writeFile } from './utils';
 import { ITodoData } from '../src/js/typings';
 
 const app: Application = express();
@@ -17,9 +17,7 @@ app.all('*',(req,res,next)=>{
 })
 
 app.get('/todolist',function(req,res){
-    console.log('进入接口')
-  const todoList: string = readFile('todo.json');
-  console.log(todoList);
+  const todoList = fileOperation('todo.json') as string;
   res.send(todoList);
 })
 
@@ -29,11 +27,9 @@ app.post('/toggle',function(req,res){
 
 app.post('/remove',function(req,res){
     const id:number = parseInt(req.body.id);
+    fileOperation('todo.json',function(){
 
-    let todoList: ITodoData[]= JSON.parse(readFile('todo.json') || '[]');
-
-    todoList = todoList.filter((todo:ITodoData)=>todo.id !== id)
-    writeFile('todo.json',todoList)
+    })
     res.send({
         msg:'ok',
         statusCode:'200'
