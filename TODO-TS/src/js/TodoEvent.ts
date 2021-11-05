@@ -1,5 +1,5 @@
 import TodoDom from "./TodoDom";
-import { getTodoList } from "./TodoService";
+import { getTodoList, removeTodo } from "./TodoService";
 import { ITodoData } from "./typings";
 
 class TodoEvent extends TodoDom{

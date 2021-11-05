@@ -2,7 +2,7 @@ import express, { Application} from 'express';
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
 import bodyParser from 'body-parser';
-import { readFile } from './utils';
+import { readFile, writeFile } from './utils';
 import { ITodoData } from '../src/js/typings';
 
 const app: Application = express();
@@ -33,8 +33,12 @@ app.post('/remove',function(req,res){
     let todoList: ITodoData[]= JSON.parse(readFile('todo.json') || '[]');
 
     todoList = todoList.filter((todo:ITodoData)=>todo.id !== id)
+    writeFile('todo.json',todoList)
+    res.send({
+        msg:'ok',
+        statusCode:'200'
+    })
 
-    
 })
 
 app.post('/add',function(req,res){
