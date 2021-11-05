@@ -1,8 +1,6 @@
 import express, { Application} from 'express';
-import { readFileSync } from 'fs';
-import { resolve } from 'path';
 import bodyParser from 'body-parser';
-import { fileOperation, readFile, writeFile } from './utils';
+import { fileOperation } from './utils';
 import { ITodoData } from '../src/js/typings';
 
 const app: Application = express();
@@ -34,7 +32,6 @@ app.post('/remove',function(req,res){
         msg:'ok',
         statusCode:'200'
     })
-
 })
 
 app.post('/add',function(req,res){

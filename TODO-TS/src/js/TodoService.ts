@@ -36,3 +36,7 @@ export function removeTodo(
    }
 
 }
+
+export function toggleTodo():void{
+    
+}
