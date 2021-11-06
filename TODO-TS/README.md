@@ -15,4 +15,10 @@
     操作DOM：addItem、removeItem、changeCompleted
     管理模板：todoView -> 接收参数
 
+# 类的继承
+
+# 装饰者模式
+
+
+
         
