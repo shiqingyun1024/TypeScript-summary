@@ -11,3 +11,4 @@
 2. action        调用mutation的方法
 3. mutations     更改state的方法
 4. state         中央数据管理池
+5. store出口      actions、mutations、state统一到仓库里进行管理
