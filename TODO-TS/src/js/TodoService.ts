@@ -58,7 +58,7 @@ export function addTodo(
   const _origin = descriptor.value;
   descriptor.value = function(todo:ITodoData){
     $.post('http://localhost:8080/add',{todo:JSON.stringify(todo)}).then(res=>{
-        if(res.statusCode === '100'){
+        if(res.statusCode === 100){
             alert('该项已存在');
             return;
         }
