@@ -47,6 +47,7 @@ app.post('/remove',function(req,res){
 })
 
 app.post('/add',function(req,res){
+    const todo: ITodoData = JSON.parse(req.body.todo);
     
 })
 

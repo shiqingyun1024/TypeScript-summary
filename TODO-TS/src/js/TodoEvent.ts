@@ -1,5 +1,5 @@
 import TodoDom from "./TodoDom";
-import { getTodoList, removeTodo, toggleTodo } from "./TodoService";
+import { getTodoList, removeTodo, toggleTodo, addTodo } from "./TodoService";
 import { ITodoData } from "./typings";
 
 class TodoEvent extends TodoDom{
@@ -10,6 +10,7 @@ class TodoEvent extends TodoDom{
         this.init(this.todoData);
     }
 
+    @addTodo
     public addTodo(todo:ITodoData): undefined | number {
         const _todo:null | ITodoData = this.todoData.find((item:ITodoData)=> item.content===todo.content);
         if(!_todo){
