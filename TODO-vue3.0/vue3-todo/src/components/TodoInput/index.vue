@@ -15,8 +15,9 @@ export default defineComponent({
   name: "TodoInput",
   setup(){
     const todoValue = ref<string>('')
-    const setTodoValue = (e:KeyboardEvent)=>{
+    const setTodoValue = (e:KeyboardEvent) :void=>{
       if(e.keyCode === 13 && todoValue.value.trim().length){
+        alert(todoValue.value);
         // 设置数据
         todoValue.value = '';
       }
