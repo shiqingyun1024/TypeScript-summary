@@ -1,10 +1,10 @@
 <template>
-  <div>Todo-input</div>
+  <div>Todo-item</div>
 </template>
 
 <script>
 export default {
-  name: "TodoInput",
+  name: "TodoItem",
 };
 </script>
 
