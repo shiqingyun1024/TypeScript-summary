@@ -1,3 +1,10 @@
+// 接口用来定义一个类结构，用来定义一个类中应该包含哪些属性和方法
+// 同时接口也可以当成类型声明去使用
+// interface myInterface{
+//     name: String;
+//     age:Number;
+// }
+
 "use strict";
 (function () {
     let obj = {
