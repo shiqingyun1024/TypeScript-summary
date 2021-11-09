@@ -2,7 +2,7 @@ import store from "@/store"
 import { ITodo, TODO_STATUS } from "@/typings"
 import { Store, useStore } from "vuex";
 
-interface IUseTodo {
+export interface IUseTodo {
     setTodo:(value:string)=>void;
     setTodoList:()=>void;
     removeTodo:()=>void;
