@@ -1,4 +1,5 @@
 import store from "@/store"
+import { SET_TODO } from "@/store/actionTypes";
 import { ITodo, TODO_STATUS } from "@/typings"
 import { Store, useStore } from "vuex";
 
