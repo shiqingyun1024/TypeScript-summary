@@ -1,4 +1,6 @@
+import store from "@/store"
 import { ITodo, TODO_STATUS } from "@/typings"
+import { Store, useStore } from "vuex";
 
 interface IUseTodo {
     setTodo:(value:string)=>void;
@@ -8,12 +10,16 @@ interface IUseTodo {
     setDoing:()=>void;
 }
 function useTodo():IUseTodo {
+
+    const store:Store<any> = useStore();
+
     function setTodo(value:string):void{
        const todo:ITodo = {
            id: new Date().getTime(),
            content:value,
            status:TODO_STATUS.WILLDO
        }
+       store.dispatch(SET_TODO,todo)
     }
     function setTodoList(){
         
@@ -36,3 +42,7 @@ function useTodo():IUseTodo {
         setDoing
     }
 }
+
+export {
+    useTodo
+};
