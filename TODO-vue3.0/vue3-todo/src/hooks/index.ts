@@ -10,6 +10,9 @@ export interface IUseTodo {
     setStatus:()=>void;
     setDoing:()=>void;
 }
+interface IUseLocalStorage{
+    
+}
 function useTodo():IUseTodo {
 
     const store:Store<any> = useStore();
@@ -41,6 +44,20 @@ function useTodo():IUseTodo {
         removeTodo,
         setStatus,
         setDoing
+    }
+}
+
+function useLocalStorage(){
+    function getLocalList():ITodo[]{
+        return JSON.parse(localStorage.getItem('todoList') || '[]')
+    }
+
+    function setLocalList (todoList:ITodo[]):void{
+        localStorage.setItem('todoList',JSON.stringify(todoList))
+    }
+    return {
+        getLocalList,
+        setLocalList
     }
 }
 
