@@ -1,7 +1,10 @@
 <template>
   <div>
-    <h1>Todo-list</h1>
-    <todo-item></todo-item>
+    <todo-item 
+     v-for="item of todoList"
+     :key = "item.id"
+     :item = "item"
+    />
   </div>
 </template>
 
