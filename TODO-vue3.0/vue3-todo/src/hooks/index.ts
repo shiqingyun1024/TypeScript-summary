@@ -11,11 +11,14 @@ export interface IUseTodo {
     setDoing:()=>void;
 }
 interface IUseLocalStorage{
-    
+    getLocalList:()=> ITodo[];
+    setLocalList:(todoList:ITodo[])=> void;
+
 }
 function useTodo():IUseTodo {
 
     const store:Store<any> = useStore();
+    const { getLocalList, setLocalList }:IUseLocalStorage = useLocalStorage();
 
     function setTodo(value:string):void{
        const todo:ITodo = {
@@ -24,6 +27,7 @@ function useTodo():IUseTodo {
            status:TODO_STATUS.WILLDO
        }
        store.dispatch(SET_TODO,todo)
+       setLocalList(store.state.list)
     }
     function setTodoList(){
         
@@ -47,7 +51,7 @@ function useTodo():IUseTodo {
     }
 }
 
-function useLocalStorage(){
+function useLocalStorage():IUseLocalStorage {
     function getLocalList():ITodo[]{
         return JSON.parse(localStorage.getItem('todoList') || '[]')
     }
