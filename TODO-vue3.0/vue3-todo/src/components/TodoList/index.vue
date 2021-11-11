@@ -12,10 +12,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import TodoItem from "./item.vue";
+import { defineComponent, PropType } from 'vue';
+import TodoItem from './Item.vue';
 export default defineComponent({
   name: "TodoList",
+  props:{
+    todoList:Array as PropType<ITodo[]>
+  },
   components: {
     TodoItem
   },
