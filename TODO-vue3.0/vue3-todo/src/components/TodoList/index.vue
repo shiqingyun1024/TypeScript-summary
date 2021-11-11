@@ -4,6 +4,9 @@
      v-for="item of todoList"
      :key = "item.id"
      :item = "item"
+     @removeTodo="removeTodo"
+     @setStatus="setStatus"
+     @setDoing="setDoing"
     />
   </div>
 </template>
