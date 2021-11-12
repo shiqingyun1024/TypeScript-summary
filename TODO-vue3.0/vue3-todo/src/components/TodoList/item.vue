@@ -9,7 +9,11 @@
   :class="item.status === FINISHED?'line-through':''"
   >{{item.content}}</span>
   <button @click="removeTodo(item.id)">删除</button>
-  <button>{{item.status===DOING?'正在做...':'马上做'}}</button>
+  <button 
+    v-if="item.status!==FINISHED"
+    @click="setDoing(item.id)"
+    :class="item.status===DOING?'doing':'willdo'"
+    >{{item.status===DOING?'正在做...':'马上做'}}</button>
 </div>
 </template>
 
@@ -23,5 +27,13 @@ export default defineComponent({
 <style>
 .line-through{
   text-decoration: line-through;
+}
+.doing{
+   background-color: #cdcdcd;
+   color: #ccc;
+}
+.willdo{
+  background-color: orange;
+   color: #fff;
 }
 </style>
