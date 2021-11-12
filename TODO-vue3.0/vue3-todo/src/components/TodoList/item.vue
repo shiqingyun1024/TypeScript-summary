@@ -1,5 +1,14 @@
 <template>
-  <div>Todo-item</div>
+<div>
+  <input 
+    type="checkbox"
+    :checked = "item.status === FINISHED"
+    @click="setStatus(item.id)"
+  />
+  <span
+  :class="item.status === FINISHED?'line-through':''"
+  >{{item.content}}</span>
+</div>
 </template>
 
 <script lang="ts">
