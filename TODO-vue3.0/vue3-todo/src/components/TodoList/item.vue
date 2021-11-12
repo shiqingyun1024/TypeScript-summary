@@ -8,6 +8,8 @@
   <span
   :class="item.status === FINISHED?'line-through':''"
   >{{item.content}}</span>
+  <button @click="removeTodo(item.id)">删除</button>
+  <button>{{item.status===DOING?'正在做...':'马上做'}}</button>
 </div>
 </template>
 
@@ -19,4 +21,7 @@ export default defineComponent({
 </script>
 
 <style>
+.line-through{
+  text-decoration: line-through;
+}
 </style>
