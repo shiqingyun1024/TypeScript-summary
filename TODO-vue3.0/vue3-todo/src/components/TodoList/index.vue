@@ -14,6 +14,7 @@
 <script lang="ts">
 import { defineComponent, onMounted, PropType } from "vue";
 import { IUseTodo, useTodo } from "../../hooks";
+import { ITodo } from '../../typings';
 import TodoItem from "./Item.vue";
 export default defineComponent({
   name: "TodoList",
