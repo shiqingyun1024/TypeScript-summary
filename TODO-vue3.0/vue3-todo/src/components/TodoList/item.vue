@@ -32,14 +32,27 @@ export default defineComponent({
   props: {
     item: Object as PropType<ITodo>,
   },
-  setup() {
+  setup(props, {emit}) {
     const statusState:IStatusState = {
       DOING: TODO_STATUS.DOING,
       FINISHED: TODO_STATUS.FINISHED,
       WILLDO: TODO_STATUS.WILLDO,
     };
+
+    const removeTodo = (id:number):void=>{
+       emit('removeTodo',id)
+    }
+    const setStatus = (id:number):void=>{
+      emit('setStatus',id)
+    }
+    const setDoing = (id:number):void=>{
+      emit('setDoing',id)
+    }
     return {
       ...statusState,
+      removeTodo,
+      setStatus,
+      setDoing
     };
   },
 });

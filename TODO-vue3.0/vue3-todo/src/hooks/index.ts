@@ -33,13 +33,13 @@ function useTodo():IUseTodo {
         store.dispatch(SET_TODO_LIST,todoList)
     }
     function removeTodo(){
-        
+        console.log('removeTodo')
     }
     function setStatus(){
-        
+        console.log('setStatus')
     }
     function setDoing(){
-        
+        console.log('setDoing')
     }
 
     return {
