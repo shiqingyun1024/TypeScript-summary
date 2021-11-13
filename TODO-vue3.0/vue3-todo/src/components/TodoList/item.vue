@@ -20,12 +20,27 @@
 </template>
 
 <script lang="ts">
-import { ITodo } from '../../typings';
+import { ITodo, TODO_STATUS } from "../../typings";
 import { defineComponent, PropType } from "vue";
+interface IStatusState {
+  DOING: TODO_STATUS;
+  FINISHED: TODO_STATUS;
+  WILLDO: TODO_STATUS;
+}
 export default defineComponent({
   name: "TodoItem",
   props: {
     item: Object as PropType<ITodo>,
+  },
+  setup() {
+    const statusState:IStatusState = {
+      DOING: TODO_STATUS.DOING,
+      FINISHED: TODO_STATUS.FINISHED,
+      WILLDO: TODO_STATUS.WILLDO,
+    };
+    return {
+      ...statusState,
+    };
   },
 });
 </script>
