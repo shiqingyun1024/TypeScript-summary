@@ -1,6 +1,6 @@
 import store from "@/store"
-import { SET_TODO, SET_TODO_LIST } from "@/store/actionTypes";
-import { ITodo, TODO_STATUS, REMOVE_TODO } from "@/typings"
+import { SET_TODO, SET_TODO_LIST, SET_TODO_STATUS,REMOVE_TODO,SET_DOING_STATUS } from "@/store/actionTypes";
+import { ITodo, TODO_STATUS } from "@/typings"
 import { Store, useStore } from "vuex";
 
 export interface IUseTodo {
@@ -39,10 +39,13 @@ function useTodo():IUseTodo {
         console.log('removeTodo')
     }
     function setStatus(id:number):void{
+        store.dispatch(SET_TODO_STATUS,id);
         setLocalList(store.state.list)
         console.log('setStatus')
     }
     function setDoing(id:number):void{
+        store.dispatch(SET_DOING_STATUS,id);
+        setLocalList(store.state.list)
         console.log('setDoing')
     }
 
