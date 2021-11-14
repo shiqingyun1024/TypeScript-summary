@@ -26,6 +26,7 @@ export default {
                         break;
                 }
             }
+            return item;
         });
     }
 }

@@ -39,6 +39,7 @@ function useTodo():IUseTodo {
         console.log('removeTodo')
     }
     function setStatus(id:number):void{
+        setLocalList(store.state.list)
         console.log('setStatus')
     }
     function setDoing(id:number):void{
