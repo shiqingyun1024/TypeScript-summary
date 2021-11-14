@@ -30,10 +30,12 @@ function useTodo():IUseTodo {
        setLocalList(store.state.list)
     }
     function setTodoList(){
-        store.dispatch(SET_TODO_LIST,todoList)
+        store.dispatch(SET_TODO_LIST,todoList);
+        // setLocalList(store.state.list)
     }
     function removeTodo(id:number):void{
         store.dispatch(REMOVE_TODO,id)
+        setLocalList(store.state.list)
         console.log('removeTodo')
     }
     function setStatus(id:number):void{

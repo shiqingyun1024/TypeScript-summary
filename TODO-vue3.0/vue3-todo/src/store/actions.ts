@@ -1,6 +1,6 @@
 import { IState, ITodo } from "@/typings";
 import { Commit } from "vuex";
-import { SET_TODO, SET_TODO_LIST,REMOVE_TODO } from "./actionTypes";
+import { SET_TODO, SET_TODO_LIST,REMOVE_TODO,SET_TODO_STATUS } from "./actionTypes";
 
 interface ICtx{
     commit:Commit,
