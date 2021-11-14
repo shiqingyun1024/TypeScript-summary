@@ -15,5 +15,8 @@ export default {
     },
     [REMOVE_TODO]({commit}:ICtx,id:number):void{
       commit(REMOVE_TODO,id);
-    }
+    },
+    [SET_TODO_STATUS]({commit}:ICtx,id:number):void{
+      commit(SET_TODO_STATUS,id);
+    },
 }
