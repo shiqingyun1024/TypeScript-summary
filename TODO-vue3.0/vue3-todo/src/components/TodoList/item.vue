@@ -63,8 +63,8 @@ export default defineComponent({
   text-decoration: line-through;
 }
 .doing {
-  background-color: #cdcdcd;
-  color: #ccc;
+  background-color: #ededed;
+  color: #666;
 }
 .willdo {
   background-color: orange;

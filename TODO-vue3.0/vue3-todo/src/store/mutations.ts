@@ -20,6 +20,7 @@ export default {
                         item.status = TODO_STATUS.WILLDO;
                         break;
                     case TODO_STATUS.WILLDO:
+                    case TODO_STATUS.DOING:
                         item.status = TODO_STATUS.FINISHED;
                         break;
                     default:
