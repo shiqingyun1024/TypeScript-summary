@@ -31,17 +31,11 @@ export default {
     },
     [SET_DOING_STATUS](state: IState, id: number): void {
         state.list = state.list.map((item: ITodo) => {
+            if (item.status === TODO_STATUS.DOING) {
+                item.status = TODO_STATUS.WILLDO;
+            }
             if (item.id === id) {
-                switch (item.status) {
-                    case TODO_STATUS.FINISHED:
-                        item.status = TODO_STATUS.WILLDO;
-                        break;
-                    case TODO_STATUS.WILLDO:
-                        item.status = TODO_STATUS.FINISHED;
-                        break;
-                    default:
-                        break;
-                }
+                item.status = TODO_STATUS.DOING;
             }
             return item;
         });
