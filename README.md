@@ -5,7 +5,7 @@ TypeScript的相关总结-- 包括学习笔记和相关的demo
 ```
 枚举(enum)类型，枚举类型是对JavaScript标准数据类型的一个补充。枚举用于取值被限定在一定范围内的场景，比如一周只能有7天，彩虹的颜色限定为赤橙黄绿青蓝紫，这些都适合用枚举来表示。
 enum Days { Sun,Mon,Tue,Wed,Thu,Fri,Sat};
-let today:Days = Days.sun;
+let today:Days = Days.Sun;
 
 ```
 
