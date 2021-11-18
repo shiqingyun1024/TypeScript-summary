@@ -2,7 +2,7 @@ import React from 'react'
 
 const TdInput=()=>{
     return (
-        <div class="todo-input"></div>
+        <div className="todo-input"></div>
     );
 }
 
