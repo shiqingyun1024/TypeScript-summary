@@ -12,3 +12,5 @@ typescript数据类型
 11、Void
 12、Never
 13、enum（枚举）
+
+字面类型
